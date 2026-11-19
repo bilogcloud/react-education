@@ -1,0 +1,10 @@
+<p id="count">0</p>
+<button id="btn">Add</button>
+
+<script>
+  let count = 0;
+  document.getElementById("btn").addEventListener("click", () => {
+    count++;
+    document.getElementById("count").textContent = count;
+  });
+</script>
