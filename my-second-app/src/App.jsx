@@ -1,10 +1,10 @@
 import "./App.css";
-import { HomePage } from "./pages/HomePage";
+import { SideEffect } from "./components/SideEffect";
 
 function App() {
   return (
     <>
-      <HomePage />
+      <SideEffect />
     </>
   );
 }
