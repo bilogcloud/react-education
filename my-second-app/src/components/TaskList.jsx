@@ -1,6 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router";
+import { ThemeContext } from "../providers/ThemeContext";
 
 export function TaskList({ title, tasks }) {
+  const navigate = useNavigate();
+
+  const theme = useContext(ThemeContext);
+
+  console.log("THEME", theme);
+
   const [showDone, setShowDone] = useState(true);
 
   const doneCount = tasks.filter((task) => task.done).length;
@@ -16,7 +24,9 @@ export function TaskList({ title, tasks }) {
 
         <ul>
           {visibleTasks.map((task) => (
-            <li key={task.id}>{task.text}</li>
+            <li key={task.id} onClick={() => navigate(`/tasks/${task.id}`)}>
+              {task.text}
+            </li>
           ))}
         </ul>
 
